@@ -1,0 +1,36 @@
+/* Step1 : initialise all variables and char array 
+Step2: Create an array to store length and initialise all its elements to zero
+step3: take input of total noof words (int)
+step4: using that input as for loop, take input of sentence, but its taken as word one by one
+step5: count noof letters in input word one by one in while loop
+step6: use the initialised array to input counted number into the array
+step7: print the word with its length then get out of for loop
+step:8 use another for loop to print the frequency */
+
+#include <stdio.h>
+int main(void)
+{
+    int i = 0;
+    int t = 0;
+    int l = 0;
+    int j = 0;
+    int nbWords = 0;   // total noof words in sentence
+    char word[11];     // array for the input sentence
+    int length[10];    //length[5] number of 5-letter-long words in the text
+    for(i=0;i<10;i++)  // initialising all elements of array to 0
+        length[i]=0;
+    scanf("%d", &nbWords); //taking input of noof words
+    for(t=0;t<nbWords;t++)
+	{
+        scanf("%s", word); //taking input word
+        l = 0;
+        while(word[l]!='\0') //counting noof letters in the input word one by one
+            l++;
+        length[l] = length[l] + 1; // input counted number into array (intially all were 0 )
+        printf("%s %d ", word,l); // print word with its length
+    }
+    for(j=0;j<10;j++) // print the frequency of a particular  word length
+        printf("There are %d words with %d letters.\n", length[j], j);
+
+    return 0;   
+}
